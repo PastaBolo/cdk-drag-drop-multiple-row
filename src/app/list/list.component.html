@@ -2,7 +2,6 @@
   <div *ngFor="let list of data" cdkDropList [cdkDropListData]="list" cdkDropListOrientation="horizontal"
     (cdkDropListDropped)="drop($event)" (cdkDropListExited)="exit($event)" (cdkDropListEntered)="enter($event)">
     <div *ngFor="let value of list" cdkDrag>{{ value }}</div>
-    <img *cdkDragPlaceholder src="https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/media/assets/submodel/7817.jpg">
   </div>
 </div>
 

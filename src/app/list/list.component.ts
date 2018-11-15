@@ -40,12 +40,12 @@ export class ListComponent {
     const enteredIndex = this.dropLists.toArray().indexOf(entered);
 
     exitedIndex < enteredIndex
-      ? this.translateUp(this.exited, entered, exitedIndex, enteredIndex)
-      : this.translateDown(this.exited, entered, exitedIndex, enteredIndex);
+      ? this.translateUp(entered, exitedIndex, enteredIndex)
+      : this.translateDown(entered, exitedIndex, enteredIndex);
   }
 
   private translateUp(
-    exited: CdkDropListContainer<string[]>, entered: CdkDropListContainer<string[]>,
+    entered: CdkDropListContainer<string[]>,
     exitedIndex: number, enteredIndex: number
   ): void {
     for (let i = enteredIndex; i > exitedIndex; i--) {
@@ -55,7 +55,7 @@ export class ListComponent {
   }
 
   private translateDown(
-    exited: CdkDropListContainer<string[]>, entered: CdkDropListContainer<string[]>,
+    entered: CdkDropListContainer<string[]>,
     exitedIndex: number, enteredIndex: number
   ): void {
     for (let i = enteredIndex; i < exitedIndex; i++) {

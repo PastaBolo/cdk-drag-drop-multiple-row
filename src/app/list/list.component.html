@@ -1,0 +1,8 @@
+<div cdkDropListGroup>
+  <div *ngFor="let list of data" cdkDropList [cdkDropListData]="list" cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)" (cdkDropListExited)="exit($event)" (cdkDropListEntered)="enter($event)">
+    <div *ngFor="let value of list" cdkDrag>{{ value }}</div>
+  </div>
+</div>
+
+<button (click)="getData()">Get data</button>
